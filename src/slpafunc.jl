@@ -1,4 +1,19 @@
 """
+This function finds the most frequent labels of neighbors
+and randomly returns one of them
+"""
+function maxvote{T}(label_count::Dict{Int,T})
+  max_count = maximum(values(label_count))
+  candidate_labels = Int[]
+  for (k,v) in label_count
+    if v == max_count
+      push!(candidate_labels, k)
+    end
+  end
+  sample(candidate_labels)
+end
+
+"""
 Applies the value of label for each neighbor
 and calls maxVote function
 """
