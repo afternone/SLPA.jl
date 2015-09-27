@@ -17,6 +17,6 @@ export
 
 include("slpafunc.jl")
 include("utils.jl")
-include("nmi")
+include("nmi.jl")
 
 end # module
